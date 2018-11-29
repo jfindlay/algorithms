@@ -38,5 +38,27 @@
             }
             insertion(A, A.Length - 1);
         }
+
+        public static void SelectionSortProc(int[] A)
+        {
+            int i = 0, j = 0, n = A.Length, min = 0, x = 0;
+            for (j = 0; j < n - 1; j++)
+            {
+                min = j;
+                for (i = j + 1; i < n; i ++)
+                {
+                    if (A[i] < A[min])
+                    {
+                        min = i;
+                    }
+                }
+                if (min != j)
+                {
+                    x = A[j];
+                    A[j] = A[min];
+                    A[min] = x;
+                }
+            }
+        }
     }
 }
